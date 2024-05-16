@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="caltamiranoT7.Vista.vHome"
+             >
+    
+    <VerticalStackLayout>
+        <Label
+            Text="Consumo de servicio web - GET"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightGray" Padding="5,0,0,5" >
+            <Label Text="Código" TextColor="Red" HorizontalOptions="FillAndExpand" />
+            <Label Text="Nombre" TextColor="Red" HorizontalOptions="FillAndExpand" />
+            <Label Text="Apellido" TextColor="Red" HorizontalOptions="FillAndExpand" />
+            <Label Text="Edad" TextColor="Red" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        <ListView x:Name="listaEstudiantes" ItemSelected="listaEstudiantes_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5,0,0,5">
+                            <Label Text="{Binding codigo}" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="{Binding nombre}" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="{Binding apellido}" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="{Binding edad}" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            x:Name="btnAgregar"
+            Text="Agregar Estudiantes"
+            Clicked="btnAgregar_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
